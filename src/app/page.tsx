@@ -140,7 +140,7 @@ export default function LandingPage() {
 
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const mission = useInView();
+  const reviews = useInView();
   const features = useInView();
   const platform = useInView();
   const stats = useInView();
@@ -442,7 +442,7 @@ export default function LandingPage() {
       </section>
 
       {/* ══════════════ STATS BAR ══════════════ */}
-      <section className="relative border-y border-gray-100 bg-white py-20 dark:border-white/8 dark:bg-black" ref={stats.ref}>
+      <section className="relative bg-white py-20 dark:bg-black" ref={stats.ref}>
         <div className={`mx-auto max-w-5xl px-6 transition-all duration-1000 ${stats.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 text-center">
             {STATS.map((s, i) => (
@@ -488,46 +488,67 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══════════════ MISSION (Moved) ══════════════ */}
-      <section className="relative overflow-hidden" ref={mission.ref}>
-        <div className={`relative z-10 mx-auto max-w-4xl px-6 py-40 text-center transition-all duration-1000 ${mission.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <p className="text-2xl leading-relaxed text-gray-800 sm:text-3xl md:text-4xl font-light dark:text-white/70">
-            TertiaryFree turns student brilliance into the force that drives academic excellence across every campus.
-          </p>
-          <p className="mt-12 text-lg leading-relaxed text-gray-600 sm:text-xl max-w-3xl mx-auto dark:text-white/50">
-            A timetable is only as good as its data, and behind every productive semester, there&apos;s an ecosystem of smart tools powering that clarity.
-          </p>
-          <p className="mt-8 text-lg leading-relaxed text-gray-600 sm:text-xl max-w-3xl mx-auto dark:text-white/50">
-            TertiaryFree orchestrates that ecosystem — connecting students, lecturers, and institutions into a seamless academic experience.
-          </p>
+      {/* ══════════════ REVIEWS ══════════════ */}
+      <section id="reviews" className="relative bg-white py-32 transition-colors duration-500 dark:bg-black" ref={reviews.ref}>
+        <div className={`mx-auto max-w-7xl px-6 transition-all duration-1000 ${reviews.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className="text-center">
+            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Reviews</h2>
+            <p className="mt-4 text-lg text-gray-500 dark:text-white/40">Voices from the campus ecosystem</p>
+          </div>
+
+          <div className="mt-20 grid md:grid-cols-3">
+            {/* Review 1 */}
+            <div className="border-b border-black/5 p-8 dark:border-white/10 md:border-b-0 md:border-r">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-white/30">Student • HTU</p>
+              <h3 className="mt-6 text-xl font-medium leading-relaxed text-gray-900 dark:text-white/90">
+                &quot;The QR check-in has completely changed how I track attendance. No more paper sheets and long queues.&quot;
+              </h3>
+            </div>
+
+            {/* Review 2 */}
+            <div className="border-b border-black/5 p-8 dark:border-white/10 md:border-b-0 md:border-r">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-white/30">Lecturer • Computer Science</p>
+              <h3 className="mt-6 text-xl font-medium leading-relaxed text-gray-900 dark:text-white/90">
+                &quot;Managing five different classes used to be a headache. Now my timetable is auto-synced and clear.&quot;
+              </h3>
+            </div>
+
+            {/* Review 3 */}
+            <div className="p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-white/30">Student • Business</p>
+              <h3 className="mt-6 text-xl font-medium leading-relaxed text-gray-900 dark:text-white/90">
+                &quot;I never miss a room swap anymore. The real-time notifications are a lifesaver for busy mornings.&quot;
+              </h3>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ══════════════ ABOUT / CTA ══════════════ */}
-      <section id="about" className="relative overflow-hidden py-32" ref={about.ref}>
+      <section id="about" className="relative overflow-hidden py-32 bg-gray-50 dark:bg-black" ref={about.ref}>
         <div className="absolute inset-0 z-0">
-          <Image src="/graduate-students-wearing-cap-gown.jpg" alt="" fill className="object-cover object-top opacity-25" sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60" />
+          <Image src="/graduate-students-wearing-cap-gown.jpg" alt="" fill className="object-cover object-top opacity-[0.04] dark:opacity-25" sizes="100vw" />
+          <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-black dark:via-black/80 dark:to-black/60" />
         </div>
 
         <div className={`relative z-10 mx-auto max-w-4xl px-6 text-center transition-all duration-1000 ${about.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+          <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             Plan your semester in minutes,<br />no hidden stress
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-white/70">
             From QR attendance check-ins to timetable sync, progress reports, and class notifications — TertiaryFree keeps your academic journey clear from week one to finals.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/signup/institution?startOver=1"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-black transition-all hover:bg-white/90"
+              className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-base font-semibold text-white transition-all hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
             >
               Create Account
               <ChevronRight className="h-4 w-4" />
             </Link>
             <Link
               href="/login"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-black/10 px-8 py-4 text-base font-semibold text-gray-900 transition-all hover:bg-black/5 dark:border-white/20 dark:text-white dark:hover:bg-white/10"
             >
               Sign in
             </Link>

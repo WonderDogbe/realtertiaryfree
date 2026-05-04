@@ -42,7 +42,7 @@ export function LandingHeader({
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "md:pointer-events-none md:opacity-0 md:-translate-y-4 pointer-events-auto opacity-100 translate-y-0 bg-white/80 backdrop-blur-xl border-b border-gray-100 dark:bg-black/80 dark:border-white/5" 
+          ? "md:pointer-events-none md:opacity-0 md:-translate-y-4 pointer-events-auto opacity-100 translate-y-0 bg-white/80 backdrop-blur-xl dark:bg-black/80" 
           : "pointer-events-auto opacity-100 translate-y-0 bg-transparent"
       }`}
     >
@@ -138,7 +138,7 @@ export function LandingHeader({
       }`}
     >
       <div className="flex justify-center px-4 pt-4">
-        <div className="flex w-full max-w-4xl items-center justify-between rounded-2xl border border-gray-200 bg-white/80 px-5 py-3 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-black/70 dark:shadow-2xl">
+        <div className="flex w-full max-w-4xl items-center justify-between rounded-2xl border border-gray-200 bg-white/80 px-5 py-3 shadow-xl backdrop-blur-xl dark:bg-black/70 dark:shadow-2xl">
           {/* Logo */}
           <Link href="/" aria-label="TertiaryFree home" className="shrink-0">
             <Image
