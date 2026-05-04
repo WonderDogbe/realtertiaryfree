@@ -1,0 +1,296 @@
+[
+  {
+    "id": "btech-hospitality-management",
+    "name": "BTech Hospitality Management",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-hospitality-and-tourism-management",
+    "name": "BTech Hospitality & Tourism Management",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-food-technology",
+    "name": "BTech Food Technology",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-tourism-leisure-and-events-management",
+    "name": "BTech Tourism, Leisure and Events Management",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-information-and-communication-technology",
+    "name": "BTech Information and Communication Technology",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-agro-enterprise-development",
+    "name": "BTech Agro Enterprise Development",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-statistics-and-finance",
+    "name": "BTech Statistics and Finance",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-computer-science",
+    "name": "BTech Computer Science",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "degree"
+  },
+  {
+    "id": "hnd-food-technology",
+    "name": "HND Food Technology",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-hotel-catering-and-institutional-management",
+    "name": "HND Hotel, Catering and Institutional Management",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-statistics",
+    "name": "HND Statistics",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-agro-enterprise-development",
+    "name": "HND Agro Enterprise Development",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-computer-science",
+    "name": "HND Computer Science",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-information-and-communication-technology",
+    "name": "HND Information and Communication Technology",
+    "facultyId": "applied-sciences-and-technology",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "btech-electrical-and-electronic-engineering",
+    "name": "BTech Electrical and Electronic Engineering",
+    "facultyId": "engineering",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-automobile-engineering",
+    "name": "BTech Automobile Engineering",
+    "facultyId": "engineering",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-agricultural-and-environmental-engineering",
+    "name": "BTech Agricultural and Environmental Engineering",
+    "facultyId": "engineering",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-civil-engineering",
+    "name": "BTech Civil Engineering",
+    "facultyId": "engineering",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-design-and-manufacturing-engineering",
+    "name": "BTech Design and Manufacturing Engineering",
+    "facultyId": "engineering",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-biomedical-engineering",
+    "name": "BTech Biomedical Engineering",
+    "facultyId": "engineering",
+    "programmeType": "degree"
+  },
+  {
+    "id": "hnd-agricultural-engineering",
+    "name": "HND Agricultural Engineering",
+    "facultyId": "engineering",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-mechanical-engineering-automobile-production",
+    "name": "HND Mechanical Engineering (Automobile / Production)",
+    "facultyId": "engineering",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-civil-engineering",
+    "name": "HND Civil Engineering",
+    "facultyId": "engineering",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-electrical-and-electronic-engineering",
+    "name": "HND Electrical and Electronic Engineering",
+    "facultyId": "engineering",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "btech-building-technology",
+    "name": "BTech Building Technology",
+    "facultyId": "built-and-natural-environment",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-facilities-and-estate-management",
+    "name": "BTech Facilities & Estate Management",
+    "facultyId": "built-and-natural-environment",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-architectural-technology",
+    "name": "BTech Architectural Technology",
+    "facultyId": "built-and-natural-environment",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-environmental-science",
+    "name": "BTech Environmental Science",
+    "facultyId": "built-and-natural-environment",
+    "programmeType": "degree"
+  },
+  {
+    "id": "hnd-building-technology",
+    "name": "HND Building Technology",
+    "facultyId": "built-and-natural-environment",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "btech-fashion-design-and-textiles",
+    "name": "BTech Fashion Design and Textiles",
+    "facultyId": "art-and-design",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-industrial-art",
+    "name": "BTech Industrial Art (Sculpture, Painting, Graphic Design, Ceramics, Textiles)",
+    "facultyId": "art-and-design",
+    "programmeType": "degree"
+  },
+  {
+    "id": "hnd-fashion-design-and-textiles",
+    "name": "HND Fashion Design and Textiles",
+    "facultyId": "art-and-design",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-industrial-art",
+    "name": "HND Industrial Art (Sculpture, Painting, Graphic Design, Ceramics, Textiles)",
+    "facultyId": "art-and-design",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "bsc-economics-and-innovation",
+    "name": "BSc Economics & Innovation",
+    "facultyId": "applied-social-sciences",
+    "programmeType": "degree"
+  },
+  {
+    "id": "ba-communication-and-applied-media-technology",
+    "name": "B.A. Communication & Applied Media Technology",
+    "facultyId": "applied-social-sciences",
+    "programmeType": "degree"
+  },
+  {
+    "id": "bsc-accounting",
+    "name": "BSc Accounting (Finance / Taxation options)",
+    "facultyId": "htu-business-school",
+    "programmeType": "degree"
+  },
+  {
+    "id": "bsc-financial-services-banking-and-finance",
+    "name": "BSc Financial Services (Banking & Finance)",
+    "facultyId": "htu-business-school",
+    "programmeType": "degree"
+  },
+  {
+    "id": "bsc-financial-services-finance-and-insurance",
+    "name": "BSc Financial Services (Finance & Insurance)",
+    "facultyId": "htu-business-school",
+    "programmeType": "degree"
+  },
+  {
+    "id": "bsc-procurement-and-supply-chain-management",
+    "name": "BSc Procurement and Supply Chain Management",
+    "facultyId": "htu-business-school",
+    "programmeType": "degree"
+  },
+  {
+    "id": "bachelor-of-marketing-and-information-technology-top-up",
+    "name": "Bachelor of Marketing and Information Technology (Top-Up)",
+    "facultyId": "htu-business-school",
+    "programmeType": "degree"
+  },
+  {
+    "id": "bachelor-of-procurement-and-supply-chain-management",
+    "name": "Bachelor of Procurement and Supply Chain Management",
+    "facultyId": "htu-business-school",
+    "programmeType": "degree"
+  },
+  {
+    "id": "bachelor-of-secretaryship-and-management-studies",
+    "name": "Bachelor of Secretaryship and Management Studies",
+    "facultyId": "htu-business-school",
+    "programmeType": "degree"
+  },
+  {
+    "id": "btech-procurement-and-supply-chain-management-top-up",
+    "name": "BTech Procurement and Supply Chain Management (Top-Up)",
+    "facultyId": "htu-business-school",
+    "programmeType": "degree"
+  },
+  {
+    "id": "hnd-accountancy",
+    "name": "HND Accountancy",
+    "facultyId": "htu-business-school",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-marketing",
+    "name": "HND Marketing",
+    "facultyId": "htu-business-school",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-secretaryship-and-management-studies",
+    "name": "HND Secretaryship and Management Studies",
+    "facultyId": "htu-business-school",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-banking-and-finance",
+    "name": "HND Banking and Finance",
+    "facultyId": "htu-business-school",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "hnd-purchasing-and-supply",
+    "name": "HND Purchasing and Supply",
+    "facultyId": "htu-business-school",
+    "programmeType": "hnd"
+  },
+  {
+    "id": "professional-cimg-programme",
+    "name": "Professional CIMG Programme",
+    "facultyId": "htu-business-school",
+    "programmeType": "hnd"
+  }
+]

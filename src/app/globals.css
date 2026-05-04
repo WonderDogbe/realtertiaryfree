@@ -1,0 +1,262 @@
+@import "tailwindcss";
+@import "@mantine/core/styles.css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-primary: #2563eb;
+  --color-brand-secondary: #60a5fa;
+  --color-surface: #f9fafb;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Reset tweaks that won't break tailwind */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+:root {
+  --color-primary: #2563eb;
+  --color-background: #ffffff;
+  --color-secondary-bg: #f9fafb;
+  --color-text: #111827;
+  --color-accent: #60a5fa;
+  --hero-text-color: #111827;
+  --logo-bg: #2563eb;
+  --logo-icon: #ffffff;
+  --logo-text: #111827;
+}
+
+:root.dark {
+  --color-primary: #3b82f6;
+  --color-background: #000000;
+  --color-secondary-bg: #0a0a0f;
+  --color-text: #f2f3ff;
+  --color-accent: #3b82f6;
+  --hero-text-color: #f2f3ff;
+  --logo-bg: #3b82f6;
+  --logo-icon: #f2f3ff;
+  --logo-text: #f2f3ff;
+}
+
+html.light,
+html.light body {
+  background-color: #ffffff;
+  color: #111827;
+}
+
+html.dark,
+html.dark body {
+  background-color: #000000;
+  color: #f2f3ff;
+}
+
+/* Keep light mode as first-visit default; dark mode is only applied via explicit user toggle. */
+
+/* Dashboard Premium Styles */
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+  }
+
+  .premium-shadow {
+    box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.14);
+  }
+
+  .premium-shadow-hover:hover {
+    box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.2);
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Premium UI Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+html.dark .glass-panel {
+  background: rgba(10, 10, 15, 0.84);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.premium-shadow {
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.05),
+    0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  opacity: 0;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Mantine Input Overrides for Premium feel */
+.mantine-InputWrapper-label {
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 6px;
+  font-size: 0.875rem;
+}
+.mantine-Input-input {
+  border-radius: 12px;
+  border-color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+.mantine-Input-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Brand Button */
+.btn-brand {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  box-shadow: 0 4px 20px rgba(99,102,241,0.35);
+}
+.btn-brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(99,102,241,0.45);
+}
+.btn-brand:active {
+  transform: translateY(0);
+}
+.btn-brand:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: #ccc;
+  box-shadow: none;
+}
+
+/* Mantine Combobox/Select readability overrides */
+[data-combobox-option] {
+  color: var(--color-text);
+}
+
+[data-combobox-option]:where(:not([data-combobox-selected], [data-combobox-disabled])):hover,
+[data-combobox-option][data-combobox-active]:where(:not([data-combobox-selected], [data-combobox-disabled])) {
+  background-color: rgba(37, 99, 235, 0.18);
+  color: var(--color-text);
+}
+
+[data-combobox-option][data-combobox-selected] {
+  background-color: rgba(37, 99, 235, 0.24);
+  color: var(--color-text);
+}
+
+/* Global clickable cursor hints */
+a[href],
+button,
+[role="button"],
+[role="link"],
+[role="menuitem"],
+[role="tab"],
+[role="switch"],
+[role="checkbox"],
+[role="radio"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="file"],
+summary,
+select,
+label[for],
+[data-combobox-option],
+[data-combobox-target] {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+[aria-disabled="true"],
+[data-disabled="true"],
+[data-combobox-disabled] {
+  cursor: not-allowed;
+}
+
+.pb-safe {
+  padding-bottom: 0.5rem;
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+/* Hide scrollbar but keep scrollable */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

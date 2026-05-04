@@ -1,0 +1,157 @@
+{
+  "genders": [
+    { "value": "male", "label": "Male" },
+    { "value": "female", "label": "Female" },
+    { "value": "other", "label": "Other" }
+  ],
+  "semesters": [
+    { "value": "1", "label": "1st Semester" },
+    { "value": "2", "label": "2nd Semester" }
+  ],
+  "levels": [
+    {
+      "value": "100-1",
+      "label": "Level 100 (1st Semester)",
+      "level": "100",
+      "semester": "1"
+    },
+    {
+      "value": "100-2",
+      "label": "Level 100 (2nd Semester)",
+      "level": "100",
+      "semester": "2"
+    },
+    {
+      "value": "200-1",
+      "label": "Level 200 (1st Semester)",
+      "level": "200",
+      "semester": "1"
+    },
+    {
+      "value": "200-2",
+      "label": "Level 200 (2nd Semester)",
+      "level": "200",
+      "semester": "2"
+    },
+    {
+      "value": "300-1",
+      "label": "Level 300 (1st Semester)",
+      "level": "300",
+      "semester": "1"
+    },
+    {
+      "value": "300-2",
+      "label": "Level 300 (2nd Semester)",
+      "level": "300",
+      "semester": "2"
+    },
+    {
+      "value": "400-1",
+      "label": "Level 400 (1st Semester)",
+      "level": "400",
+      "semester": "1"
+    },
+    {
+      "value": "400-2",
+      "label": "Level 400 (2nd Semester)",
+      "level": "400",
+      "semester": "2"
+    }
+  ],
+  "departments": [
+    {
+      "id": "cs",
+      "name": "DEPARTMENT OF COMPUTER SCIENCE"
+    },
+    {
+      "id": "math",
+      "name": "DEPARTMENT OF MATHEMATICAL SCIENCES"
+    },
+    {
+      "id": "him",
+      "name": "DEPARTMENT OF HEALTH INFORMATION MANAGEMENT"
+    },
+    {
+      "id": "edu",
+      "name": "DEPARTMENT OF EDUCATION STUDIES"
+    },
+    {
+      "id": "bus",
+      "name": "DEPARTMENT OF BUSINESS ADMINISTRATION"
+    }
+  ],
+  "programmes": [
+    {
+      "id": "bsc-computer-science",
+      "name": "B.Sc. Computer Science",
+      "departmentId": "cs"
+    },
+    {
+      "id": "bsc-information-technology",
+      "name": "B.Sc. Information Technology",
+      "departmentId": "cs"
+    },
+    {
+      "id": "bsc-mathematics",
+      "name": "B.Sc. Mathematics",
+      "departmentId": "math"
+    },
+    {
+      "id": "bsc-health-information-management",
+      "name": "B.Sc. Health Information Management",
+      "departmentId": "him"
+    },
+    {
+      "id": "bed-basic-education",
+      "name": "B.Ed. Basic Education",
+      "departmentId": "edu"
+    },
+    {
+      "id": "bsc-business-administration",
+      "name": "B.Sc. Business Administration",
+      "departmentId": "bus"
+    }
+  ],
+  "signupRoles": [
+    {
+      "value": "student",
+      "title": "Student",
+      "description": "For HTU, select faculty and programme first, then enter details, choose level, and set your password."
+    },
+    {
+      "value": "lecturer",
+      "title": "Lecturer",
+      "description": "Continue with lecturer registration fields including title and course lectured."
+    }
+  ],
+  "lecturerTitles": [
+    {
+      "value": "Dr.",
+      "label": "Dr."
+    },
+    {
+      "value": "Prof.",
+      "label": "Prof."
+    },
+    {
+      "value": "Mr.",
+      "label": "Mr."
+    },
+    {
+      "value": "Mrs.",
+      "label": "Mrs."
+    },
+    {
+      "value": "Ms.",
+      "label": "Ms."
+    },
+    {
+      "value": "Lecturer",
+      "label": "Lecturer"
+    },
+    {
+      "value": "Senior Lecturer",
+      "label": "Senior Lecturer"
+    }
+  ]
+}

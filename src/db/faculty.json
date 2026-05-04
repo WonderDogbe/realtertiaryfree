@@ -1,0 +1,30 @@
+[
+  {
+    "id": "applied-sciences-and-technology",
+    "name": "Faculty of Applied Sciences and Technology"
+  },
+  {
+    "id": "engineering",
+    "name": "Faculty of Engineering"
+  },
+  {
+    "id": "built-and-natural-environment",
+    "name": "Faculty of Built and Natural Environment"
+  },
+  {
+    "id": "art-and-design",
+    "name": "Faculty of Art and Design"
+  },
+  {
+    "id": "applied-social-sciences",
+    "name": "Faculty of Applied Social Sciences"
+  },
+  {
+    "id": "htu-business-school",
+    "name": "HTU Business School"
+  },
+  {
+    "id": "graduate-studies",
+    "name": "School of Graduate Studies"
+  }
+]

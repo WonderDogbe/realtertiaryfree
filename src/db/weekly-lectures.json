@@ -1,0 +1,83 @@
+[
+  {
+    "id": "wk-1",
+    "day": "Monday",
+    "courseCode": "MTH 101 25/26",
+    "lecturer": "Dr. Smith",
+    "venue": "Room A2",
+    "startTime": "09:00",
+    "endTime": "10:50"
+  },
+  {
+    "id": "wk-2",
+    "day": "Monday",
+    "courseCode": "ICT 207 25/26",
+    "lecturer": "Dr. Mensah",
+    "venue": "Lab C",
+    "startTime": "13:00",
+    "endTime": "14:50"
+  },
+  {
+    "id": "wk-3",
+    "day": "Tuesday",
+    "courseCode": "PHY 201 25/26",
+    "lecturer": "Prof. Lee",
+    "venue": "Hall B1",
+    "startTime": "11:00",
+    "endTime": "12:50"
+  },
+  {
+    "id": "wk-4",
+    "day": "Tuesday",
+    "courseCode": "ICT 205 25/26",
+    "lecturer": "Ms. Ofori",
+    "venue": "Studio 4",
+    "startTime": "15:00",
+    "endTime": "16:50"
+  },
+  {
+    "id": "wk-5",
+    "day": "Wednesday",
+    "courseCode": "ICT 301 25/26",
+    "lecturer": "Dr. Boateng",
+    "venue": "Room D3",
+    "startTime": "07:00",
+    "endTime": "08:50"
+  },
+  {
+    "id": "wk-6",
+    "day": "Thursday",
+    "courseCode": "ICT 315 25/26",
+    "lecturer": "Dr. Chen",
+    "venue": "Lab A1",
+    "startTime": "17:00",
+    "endTime": "18:50"
+  },
+  {
+    "id": "wk-7",
+    "day": "Friday",
+    "courseCode": "ICT 208 25/26",
+    "lecturer": "Mr. Johnson",
+    "venue": "Room C5",
+    "startTime": "19:00",
+    "endTime": "20:50"
+  },
+  {
+    "id": "wk-8",
+    "day": "Saturday",
+    "courseCode": "ICT 315 25/26",
+    "lecturer": "Dr. Chen",
+    "venue": "Lab A1",
+    "startTime": "09:00",
+    "endTime": "10:50"
+  },
+  {
+    "id": "wk-9",
+    "day": "Sunday",
+    "courseCode": "MTH 101 25/26",
+    "lecturer": "Dr. Smith",
+    "venue": "Room A2",
+    "startTime": "11:00",
+    "endTime": "12:50"
+  }
+]

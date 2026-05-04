@@ -1,0 +1,51 @@
+[
+  {
+    "id": "mth-101-25-26",
+    "code": "MTH 101 25/26",
+    "title": "Math 101",
+    "department": "DEPARTMENT OF MATHEMATICAL SCIENCES",
+    "image": "/images/course-emerald-a.svg"
+  },
+  {
+    "id": "ict-207-25-26",
+    "code": "ICT 207 25/26",
+    "title": "Data Structures",
+    "department": "DEPARTMENT OF COMPUTER SCIENCE",
+    "image": "/images/course-teal-a.svg"
+  },
+  {
+    "id": "phy-201-25-26",
+    "code": "PHY 201 25/26",
+    "title": "Physics 201",
+    "department": "DEPARTMENT OF MATHEMATICAL SCIENCES",
+    "image": "/images/course-gold-a.svg"
+  },
+  {
+    "id": "ict-205-25-26",
+    "code": "ICT 205 25/26",
+    "title": "UI Design",
+    "department": "DEPARTMENT OF COMPUTER SCIENCE",
+    "image": "/images/course-blue-a.svg"
+  },
+  {
+    "id": "ict-301-25-26",
+    "code": "ICT 301 25/26",
+    "title": "Software Engineering",
+    "department": "DEPARTMENT OF COMPUTER SCIENCE",
+    "image": "/images/course-slate-a.svg"
+  },
+  {
+    "id": "ict-315-25-26",
+    "code": "ICT 315 25/26",
+    "title": "Database Systems",
+    "department": "DEPARTMENT OF COMPUTER SCIENCE",
+    "image": "/images/course-emerald-a.svg"
+  },
+  {
+    "id": "ict-208-25-26",
+    "code": "ICT 208 25/26",
+    "title": "Networks",
+    "department": "DEPARTMENT OF COMPUTER SCIENCE",
+    "image": "/images/course-teal-a.svg"
+  }
+]
