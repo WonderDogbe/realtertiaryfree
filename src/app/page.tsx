@@ -14,6 +14,7 @@ import {
   Rocket,
   FileText,
   UserPlus,
+  Star,
   type LucideIcon,
 } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -113,6 +114,40 @@ const STEPS = [
   { icon: Users, title: "Choose Role", desc: "Select whether you're a student or lecturer for a tailored experience." },
   { icon: FileText, title: "Your Details", desc: "Fill in your info — institution, programme, and preferences." },
   { icon: UserPlus, title: "You're In", desc: "Your dashboard is ready with timetables, attendance, and updates." },
+];
+
+/* ─── REVIEWS ─── */
+const REVIEWS = [
+  {
+    role: "Student • HTU",
+    content: "The QR check-in has completely changed how I track attendance. No more paper sheets and long queues.",
+    rating: "5.0",
+  },
+  {
+    role: "Lecturer • Computer Science",
+    content: "Managing five different classes used to be a headache. Now my timetable is auto-synced and clear.",
+    rating: "5.0",
+  },
+  {
+    role: "Student • Business",
+    content: "I never miss a room swap anymore. The real-time notifications are a lifesaver for busy mornings.",
+    rating: "5.0",
+  },
+  {
+    role: "Student • Engineering",
+    content: "TertiaryFree makes it so easy to keep track of my academic progress. The interface is just beautiful.",
+    rating: "4.9",
+  },
+  {
+    role: "Lecturer • Economics",
+    content: "The analytics tools help me identify students who need support early in the semester. Highly recommended.",
+    rating: "5.0",
+  },
+  {
+    role: "Student • Arts",
+    content: "Finally, an app that actually understands student needs. The timetable sync is flawless.",
+    rating: "5.0",
+  },
 ];
 
 /* ─── INTERSECTION OBSERVER HOOK ─── */
@@ -488,40 +523,53 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══════════════ REVIEWS ══════════════ */}
-      <section id="reviews" className="relative bg-white py-32 transition-colors duration-500 dark:bg-black" ref={reviews.ref}>
-        <div className={`mx-auto max-w-7xl px-6 transition-all duration-1000 ${reviews.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+      {/* ══════════════ REVIEWS MARQUEE ══════════════ */}
+      <section id="reviews" className="relative bg-white py-32 overflow-hidden transition-colors duration-500 dark:bg-black" ref={reviews.ref}>
+        <div className={`mx-auto max-w-7xl px-6 mb-16 transition-all duration-1000 ${reviews.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <div className="text-center">
-            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Reviews</h2>
-            <p className="mt-4 text-lg text-gray-500 dark:text-white/40">Voices from the campus ecosystem</p>
-          </div>
-
-          <div className="mt-20 grid md:grid-cols-3">
-            {/* Review 1 */}
-            <div className="border-b border-black/5 p-8 dark:border-white/10 md:border-b-0 md:border-r">
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-white/30">Student • HTU</p>
-              <h3 className="mt-6 text-xl font-medium leading-relaxed text-gray-900 dark:text-white/90">
-                &quot;The QR check-in has completely changed how I track attendance. No more paper sheets and long queues.&quot;
-              </h3>
-            </div>
-
-            {/* Review 2 */}
-            <div className="border-b border-black/5 p-8 dark:border-white/10 md:border-b-0 md:border-r">
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-white/30">Lecturer • Computer Science</p>
-              <h3 className="mt-6 text-xl font-medium leading-relaxed text-gray-900 dark:text-white/90">
-                &quot;Managing five different classes used to be a headache. Now my timetable is auto-synced and clear.&quot;
-              </h3>
-            </div>
-
-            {/* Review 3 */}
-            <div className="p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-white/30">Student • Business</p>
-              <h3 className="mt-6 text-xl font-medium leading-relaxed text-gray-900 dark:text-white/90">
-                &quot;I never miss a room swap anymore. The real-time notifications are a lifesaver for busy mornings.&quot;
-              </h3>
-            </div>
+            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Voices of Impact</h2>
+            <p className="mt-4 text-lg text-gray-500 dark:text-white/40">Trusted by students and lecturers across institutions.</p>
           </div>
         </div>
+
+        {/* Marquee Container */}
+        <div className="relative flex overflow-hidden py-10">
+          <div className="flex animate-marquee whitespace-nowrap gap-8 hover:[animation-play-state:paused]">
+            {[...REVIEWS, ...REVIEWS].map((review, i) => (
+              <div
+                key={`${review.role}-${i}`}
+                className="w-[400px] flex-shrink-0 rounded-3xl border border-black/5 bg-gray-50/50 p-8 dark:border-white/10 dark:bg-white/[0.02] transition-all hover:border-black/10 dark:hover:border-white/20"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, starIdx) => (
+                      <Star key={starIdx} className={`h-3.5 w-3.5 ${starIdx < Math.floor(parseFloat(review.rating)) ? "fill-amber-400 text-amber-400" : "text-gray-300 dark:text-gray-600"}`} />
+                    ))}
+                  </div>
+                  <span className="text-[11px] font-bold text-amber-500/80 dark:text-amber-400/60 tracking-wider">{review.rating}</span>
+                </div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-white/20 mb-4">{review.role}</p>
+                <p className="text-lg font-medium leading-relaxed text-gray-900 dark:text-white/90 whitespace-normal">
+                  &quot;{review.content}&quot;
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          {/* Gradient Masks */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-black" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-black" />
+        </div>
+
+        <style jsx global>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-100% / 2 - 2rem)); }
+          }
+          .animate-marquee {
+            animation: marquee 50s linear infinite;
+          }
+        `}</style>
       </section>
 
       {/* ══════════════ ABOUT / CTA ══════════════ */}
