@@ -278,7 +278,7 @@ export default function LandingPage() {
       />
 
       {/* ══════════════ HERO — full-bleed cinematic image ══════════════ */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative h-[75vh] md:h-screen flex flex-col items-center justify-center overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image src="/hero-img.jpeg" alt="" fill priority className="object-cover object-center" sizes="100vw" />
@@ -325,7 +325,7 @@ export default function LandingPage() {
           </div>
 
           <div
-            className="relative mt-14 min-h-[620px] touch-pan-y overflow-visible pt-10 select-none sm:min-h-[610px] sm:pt-12"
+            className="relative mt-14 min-h-[540px] sm:min-h-[620px] touch-pan-y overflow-visible pt-10 select-none sm:pt-12"
             onMouseEnter={() => setIsFeaturePaused(true)}
             onMouseLeave={() => setIsFeaturePaused(false)}
             onFocusCapture={() => setIsFeaturePaused(true)}
@@ -382,7 +382,7 @@ export default function LandingPage() {
                     zIndex,
                     filter: absOffset > 1 ? "saturate(85%)" : "none",
                   }}
-                  className={`group absolute left-1/2 top-0 flex flex-col w-[min(90vw,25.5rem)] min-h-[480px] overflow-hidden rounded-3xl border bg-gray-50 p-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:bg-zinc-900 ${
+                  className={`group absolute left-1/2 top-0 flex flex-col w-[calc(100vw-48px)] sm:w-[25.5rem] min-h-[420px] sm:min-h-[480px] overflow-hidden rounded-3xl border bg-gray-50 p-6 sm:p-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:bg-zinc-900 ${
                     card.featured ? "border-gray-900/40 dark:border-white/40" : "border-gray-200 dark:border-white/10"
                   } ${
                     isVisible
@@ -404,7 +404,7 @@ export default function LandingPage() {
                     {card.description}
                   </p>
 
-                  <ul className="mt-6 space-y-2.5">
+                  <ul className="mt-4 sm:mt-6 space-y-2.5">
                     {card.points.map((point) => (
                       <li key={point} className="flex items-start gap-2.5 text-sm font-medium text-gray-700 dark:text-white/60">
                         <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-500 dark:text-emerald-400" />
@@ -499,23 +499,36 @@ export default function LandingPage() {
             <p className="mt-4 text-lg text-gray-500 dark:text-white/40">Get started in minutes, not days.</p>
           </div>
 
-          <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 sm:mt-20 grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step, i) => {
               const Icon = step.icon;
               return (
                 <div
                   key={step.title}
-                  className={`relative rounded-2xl border border-gray-100 bg-gray-50/50 p-8 text-center transition-all duration-700 hover:border-blue-200 dark:border-white/8 dark:bg-white/[0.03] dark:hover:border-white/20 ${onboarding.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  className={`group relative rounded-3xl border border-gray-100 bg-gray-50/50 p-6 sm:p-8 flex flex-row items-start gap-5 sm:flex-col sm:items-center sm:text-center transition-all duration-700 hover:border-blue-200 dark:border-white/8 dark:bg-white/[0.03] dark:hover:border-white/20 ${onboarding.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   style={{ transitionDelay: `${i * 120}ms` }}
                 >
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-black text-lg font-bold text-white dark:bg-white dark:text-black">
-                    {i + 1}
+                  {/* Step Number & Desktop Icon */}
+                  <div className="flex-shrink-0 flex flex-col items-center gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black text-sm sm:text-lg font-bold text-white dark:bg-white dark:text-black transition-transform group-hover:scale-110">
+                      {i + 1}
+                    </div>
+                    <div className="hidden sm:flex h-16 w-16 items-center justify-center rounded-2xl bg-black/5 dark:bg-white/5 transition-colors group-hover:bg-black/10 dark:group-hover:bg-white/10">
+                      <Icon className="h-8 w-8 text-gray-900 dark:text-white/80" />
+                    </div>
                   </div>
-                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-black/5 dark:bg-white/5">
-                    <Icon className="h-8 w-8 text-gray-900 dark:text-white/80" />
+
+                  {/* Content Area */}
+                  <div className="flex-1 pt-1 sm:pt-0">
+                    <div className="flex items-center gap-2.5 mb-2 sm:hidden">
+                      <Icon className="h-5 w-5 text-gray-400 dark:text-white/40" />
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white/90">{step.title}</h3>
+                    </div>
+                    <h3 className="hidden sm:block text-xl font-bold text-gray-900 dark:text-white/90">{step.title}</h3>
+                    <p className="text-sm leading-relaxed text-gray-500 dark:text-white/40 sm:mt-3">
+                      {step.desc}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white/90">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-gray-500 dark:text-white/40">{step.desc}</p>
                 </div>
               );
             })}
