@@ -249,7 +249,7 @@ export default function LandingPage() {
           <img src="/hero-img.jpeg" alt="Welcome" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-white dark:via-transparent dark:via-transparent dark:to-black" />
         </div>
-        <div className="flex-1 flex flex-col justify-end px-6 pb-12 -mt-10 relative z-10">
+        <div className="flex-1 flex flex-col justify-end px-8 pb-12 -mt-10 relative z-10">
           <div className="text-center mb-10">
             <h1 className="text-4xl font-extrabold tracking-tight">
               Tertiary<span className="text-gray-900 dark:text-white">Free</span>
@@ -286,9 +286,9 @@ export default function LandingPage() {
         </div>
 
         {/* Hero content — centered */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-5xl">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-8 max-w-5xl">
           <h1 className="text-4xl font-semibold leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl dark:text-white">
-            Empower Your Academic<br />Journey
+            Empower Your<br />Academic Journey
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-gray-800 dark:text-white/60 sm:text-xl">
             Personalized timetables, real-time updates, and smart notifications for students and lecturers.
@@ -311,13 +311,13 @@ export default function LandingPage() {
       {/* ══════════════ FEATURES CAROUSEL ══════════════ */}
       <section id="features" className="relative bg-white py-32 dark:bg-black" ref={features.ref}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#2563eb11,transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top,#1e3a5f22,transparent_60%)]" />
-        <div className="relative mx-auto max-w-7xl px-6">
+        <div className="relative mx-auto max-w-7xl px-8">
           <div className={`text-center transition-all duration-1000 ${features.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-            <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-gray-900 dark:text-white/90">
-              Everything You Need To
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-gray-900 dark:text-white/90">
+              Everything You Need
             </h2>
-            <p className="mt-3 text-2xl font-semibold tracking-tight text-gray-700 sm:text-3xl dark:text-white/70">
-              Manage Your Academic Life Seamlessly
+            <p className="mt-3 text-xl font-semibold tracking-tight text-gray-700 sm:text-3xl dark:text-white/70">
+              To Manage Your Academic Life Seamlessly
             </p>
             <p className="mx-auto mt-4 max-w-3xl text-base text-gray-500 sm:text-lg dark:text-white/40">
               TertiaryFree brings attendance, timetable flow, lecturer tools, and class communication into one connected platform.
@@ -382,7 +382,7 @@ export default function LandingPage() {
                     zIndex,
                     filter: absOffset > 1 ? "saturate(85%)" : "none",
                   }}
-                  className={`group absolute left-1/2 top-0 flex flex-col w-[calc(100vw-48px)] sm:w-[25.5rem] min-h-[420px] sm:min-h-[480px] overflow-hidden rounded-3xl border bg-gray-50 p-6 sm:p-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:bg-zinc-900 ${
+                  className={`group absolute left-1/2 top-0 flex flex-col w-[calc(100vw-64px)] sm:w-[25.5rem] min-h-[420px] sm:min-h-[480px] overflow-hidden rounded-3xl border bg-gray-50 p-6 sm:p-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:bg-zinc-900 ${
                     card.featured ? "border-gray-900/40 dark:border-white/40" : "border-gray-200 dark:border-white/10"
                   } ${
                     isVisible
@@ -438,7 +438,7 @@ export default function LandingPage() {
       {/* ══════════════ PLATFORM SHOWCASE ══════════════ */}
       <section id="platform" className="relative bg-gray-50 py-32 overflow-hidden dark:bg-black" ref={platform.ref}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,#3b82f611,transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,#0c2d6b33,transparent_60%)]" />
-        <div className="relative mx-auto max-w-7xl px-6">
+        <div className="relative mx-auto max-w-7xl px-8">
           {/* Dashboard row */}
           <div className={`grid gap-16 lg:grid-cols-2 items-center transition-all duration-1000 ${platform.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="relative">
@@ -478,7 +478,7 @@ export default function LandingPage() {
 
       {/* ══════════════ STATS BAR ══════════════ */}
       <section className="relative bg-white py-20 dark:bg-black" ref={stats.ref}>
-        <div className={`mx-auto max-w-5xl px-6 transition-all duration-1000 ${stats.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className={`mx-auto max-w-5xl px-8 transition-all duration-1000 ${stats.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 text-center">
             {STATS.map((s, i) => (
               <div key={s.label} style={{ transitionDelay: `${i * 100}ms` }}>
@@ -493,7 +493,7 @@ export default function LandingPage() {
       {/* ══════════════ ONBOARDING ══════════════ */}
       <section id="onboarding" className="relative bg-white py-32 dark:bg-black" ref={onboarding.ref}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#3b82f611,transparent_60%)] dark:bg-[radial-gradient(ellipse_at_center,#1e3a5f15,transparent_60%)]" />
-        <div className="relative mx-auto max-w-7xl px-6">
+        <div className="relative mx-auto max-w-7xl px-8">
           <div className={`text-center transition-all duration-1000 ${onboarding.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <h2 className="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white/90 sm:text-6xl">How it works</h2>
             <p className="mt-4 text-lg text-gray-500 dark:text-white/40">Get started in minutes, not days.</p>
@@ -538,7 +538,7 @@ export default function LandingPage() {
 
       {/* ══════════════ REVIEWS MARQUEE ══════════════ */}
       <section id="reviews" className="relative bg-white py-32 overflow-hidden transition-colors duration-500 dark:bg-black" ref={reviews.ref}>
-        <div className={`mx-auto max-w-7xl px-6 mb-16 transition-all duration-1000 ${reviews.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className={`mx-auto max-w-7xl px-8 mb-16 transition-all duration-1000 ${reviews.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <div className="text-center">
             <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Voices of Impact</h2>
             <p className="mt-4 text-lg text-gray-500 dark:text-white/40">Trusted by students and lecturers across institutions.</p>
@@ -592,7 +592,7 @@ export default function LandingPage() {
           <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-black dark:via-black/80 dark:to-black/60" />
         </div>
 
-        <div className={`relative z-10 mx-auto max-w-4xl px-6 text-center transition-all duration-1000 ${about.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className={`relative z-10 mx-auto max-w-4xl px-8 text-center transition-all duration-1000 ${about.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             Plan your semester in minutes,<br />no hidden stress
           </h2>

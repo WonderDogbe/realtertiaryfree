@@ -28,7 +28,7 @@ export function Footer() {
       id="contact"
       className="bg-gray-200 dark:bg-black"
     >
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl px-8 py-16 lg:px-8">
         {/* Top: logo + columns */}
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Logo & tagline */}
