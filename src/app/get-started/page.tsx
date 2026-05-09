@@ -36,13 +36,11 @@ const ROLE_OPTIONS: RoleOption[] = [
 
 export default function GetStartedPage() {
   return (
-    <main className="min-h-screen bg-[var(--color-background)] px-4 py-10 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[var(--color-background)] px-4 py-4 sm:px-6 lg:px-8 flex flex-col justify-center">
       <div className="mx-auto flex w-full max-w-6xl flex-col">
-        <header className="flex items-center justify-between">
-          <Logo
-            size="sm"
-            className="origin-left scale-125 sm:scale-150 lg:scale-[2]"
-          />
+        <header className="flex items-center justify-end">
+          {/* Logo removed to save space */}
+
 
           <Link
             href="/login"
@@ -52,21 +50,21 @@ export default function GetStartedPage() {
           </Link>
         </header>
 
-        <section className="mx-auto mt-14 w-full max-w-5xl">
+        <section className="mx-auto mt-6 w-full max-w-5xl">
           <div className="text-center">
             <p className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-1 text-xs font-semibold tracking-[0.12em] text-[var(--color-primary)]">
               CREATE ACCOUNT
             </p>
-            <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-[var(--color-text)] sm:text-4xl md:text-5xl">
+            <h1 className="mt-4 text-2xl font-extrabold tracking-tight text-[var(--color-text)] sm:text-3xl md:text-4xl">
               ARE YOU A STUDENT OR A LECTURER?
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
               Choose your role to continue. Both options lead to the same secure
               registration flow with fields tailored to your needs.
             </p>
           </div>
 
-          <div className="mt-10 grid auto-rows-fr gap-6 md:grid-cols-2">
+          <div className="mt-6 grid auto-rows-fr gap-4 md:grid-cols-2">
             {ROLE_OPTIONS.map((option) => {
               const Icon = option.icon;
 
@@ -74,25 +72,25 @@ export default function GetStartedPage() {
                 <Link
                   key={option.title}
                   href={option.href}
-                  className="group flex h-full min-h-[280px] flex-col rounded-3xl border border-blue-100/80 bg-[var(--color-secondary-bg)] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:shadow-xl hover:shadow-blue-200/70 dark:hover:shadow-none"
+                  className="group flex h-full min-h-[180px] flex-col rounded-2xl border border-blue-100/80 bg-[var(--color-secondary-bg)] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:shadow-xl hover:shadow-blue-200/70 dark:hover:shadow-none"
                 >
                   <div
-                    className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl ${option.iconClassName}`}
+                    className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${option.iconClassName}`}
                   >
-                    <Icon className="h-7 w-7" />
+                    <Icon className="h-5 w-5" />
                   </div>
 
-                  <h2 className="mt-6 text-2xl font-extrabold tracking-tight text-[var(--color-text)]">
+                  <h2 className="mt-4 text-xl font-extrabold tracking-tight text-[var(--color-text)]">
                     {option.title}
                   </h2>
 
-                  <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
+                  <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-sm">
                     {option.description}
                   </p>
 
-                  <span className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold text-[var(--color-primary)]">
+                  <span className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-semibold text-[var(--color-primary)]">
                     Continue as {option.title}
-                    <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </span>
                 </Link>
               );

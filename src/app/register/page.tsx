@@ -53,13 +53,13 @@ export default function RegisterPage({
       fontSize: "0.76rem",
       letterSpacing: "0.08em",
       textTransform: "uppercase" as const,
-      marginBottom: "0.42rem",
+      marginBottom: "0.25rem",
     },
     input: {
       backgroundColor: "var(--color-secondary-bg)",
       color: "var(--color-text)",
       borderColor: "rgba(148, 163, 184, 0.35)",
-      minHeight: "54px",
+      minHeight: "42px",
     },
     dropdown: {
       backgroundColor: "var(--color-secondary-bg)",
@@ -173,7 +173,7 @@ export default function RegisterPage({
           : "Manage your lectures and connect with students effortlessly"
       }
     >
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5 sm:gap-6">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2 sm:gap-3">
         {/* Role Selector */}
         <div className="flex gap-2 rounded-2xl bg-slate-100 p-1.5 dark:bg-slate-800">
           <button
@@ -236,7 +236,7 @@ export default function RegisterPage({
         />
 
         {userType === "student" && (
-          <>
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
             <TextInput
               id="register-index-number"
               label="Index Number"
@@ -259,7 +259,7 @@ export default function RegisterPage({
             <Select
               id="register-gender"
               label="Gender"
-              placeholder="Select your gender"
+              placeholder="Select"
               size="md"
               leftSection={<User size={18} className="text-slate-400" />}
               data={GENDER_OPTIONS}
@@ -275,7 +275,7 @@ export default function RegisterPage({
               error={errors.gender}
               styles={inputStyles}
             />
-          </>
+          </div>
         )}
 
         <PasswordInput

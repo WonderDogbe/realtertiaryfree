@@ -382,7 +382,7 @@ export default function LandingPage() {
                     zIndex,
                     filter: absOffset > 1 ? "saturate(85%)" : "none",
                   }}
-                  className={`group absolute left-1/2 top-0 flex flex-col w-[calc(100vw-64px)] sm:w-[25.5rem] min-h-[420px] sm:min-h-[480px] overflow-hidden rounded-3xl border bg-gray-50 p-6 sm:p-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:bg-zinc-950 ${
+                  className={`group absolute left-1/2 top-0 flex flex-col w-[calc(100vw-64px)] sm:w-[25.5rem] min-h-[420px] sm:min-h-[480px] overflow-hidden rounded-3xl border bg-gray-50 p-6 sm:p-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:bg-zinc-900 ${
                     card.featured ? "border-gray-900/40 dark:border-white/40" : "border-gray-200 dark:border-white/15"
                   } ${
                     isVisible
@@ -505,7 +505,7 @@ export default function LandingPage() {
               return (
                 <div
                   key={step.title}
-                  className={`group relative rounded-3xl border border-gray-100 bg-gray-50/50 p-6 sm:p-8 flex flex-row items-start gap-5 sm:flex-col sm:items-center sm:text-center transition-all duration-700 hover:border-blue-200 dark:border-white/15 dark:bg-zinc-950 dark:hover:border-white/25 ${onboarding.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  className={`group relative rounded-3xl border border-gray-100 bg-gray-50/50 p-6 sm:p-8 flex flex-row items-start gap-5 sm:flex-col sm:items-center sm:text-center transition-all duration-700 hover:border-blue-200 dark:border-white/15 dark:bg-zinc-900 dark:hover:border-white/25 ${onboarding.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   style={{ transitionDelay: `${i * 120}ms` }}
                 >
                   {/* Step Number & Desktop Icon */}
@@ -551,7 +551,7 @@ export default function LandingPage() {
             {[...REVIEWS, ...REVIEWS].map((review, i) => (
               <div
                 key={`${review.role}-${i}`}
-                className="w-[400px] flex-shrink-0 rounded-3xl border border-black/5 bg-gray-50/50 p-8 dark:border-white/15 dark:bg-zinc-950 transition-all hover:border-black/10 dark:hover:border-white/25"
+                className="w-[400px] flex-shrink-0 rounded-3xl border border-black/5 bg-gray-50/50 p-8 dark:border-white/15 dark:bg-zinc-900 transition-all hover:border-black/10 dark:hover:border-white/25"
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="flex gap-0.5">

@@ -52,14 +52,14 @@ export default function LoginPage({
   };
 
   const inputStyles = {
-    root: { marginBottom: "1.25rem" },
+    root: { marginBottom: "1rem" },
     label: { display: "none" },
     input: {
       backgroundColor: "#fff",
       color: "#000",
       borderColor: "#d8b4fe",
       borderWidth: "1.5px",
-      minHeight: "60px",
+      minHeight: "42px",
       borderRadius: "16px",
       fontSize: "1rem",
       fontWeight: "600" as const,
@@ -80,8 +80,8 @@ export default function LoginPage({
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
-          padding: 5rem 1.25rem 2.5rem;
+          justify-content: flex-start;
+          padding-top: 3rem;
           position: relative;
           overflow: hidden;
           background: #fdfdfd;
@@ -108,10 +108,10 @@ export default function LoginPage({
           display: flex;
           flex-direction: column;
           align-items: stretch;
-          gap: 2.5rem;
+          gap: 1rem;
         }
 
-        .institution-header { text-align: center; margin-bottom: 1rem; }
+        .institution-header { text-align: center; margin-bottom: 0.5rem; }
         .institution-title {
           font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; color: #000; margin: 0; line-height: 1.1;
         }
@@ -122,7 +122,7 @@ export default function LoginPage({
         .institution-form-card {
           background: #fff;
           border-radius: 32px;
-          padding: 2.5rem;
+          padding: 1.5rem;
           box-shadow: 0 20px 60px rgba(0,0,0,0.06);
           border: 1px solid rgba(0,0,0,0.02);
         }
@@ -143,7 +143,7 @@ export default function LoginPage({
           background: #000;
           color: #fff;
           width: 100%;
-          margin-top: 1rem;
+          margin-top: 0.5rem;
         }
         .institution-continue-btn:hover:not(:disabled) {
           transform: translateY(-2px);

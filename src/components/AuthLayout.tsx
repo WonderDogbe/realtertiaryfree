@@ -115,11 +115,11 @@ export function AuthLayout({
       </div>
 
       {/* Right pane - Form Content (Previously Left) */}
-      <div className="relative flex flex-1 flex-col justify-center px-5 pb-10 pt-24 sm:px-6 sm:pt-24 lg:flex-none lg:w-[500px] lg:justify-center lg:px-12 lg:py-12 xl:w-[600px] xl:px-24">
+      <div className="relative flex flex-1 flex-col justify-start px-5 pb-10 pt-16 sm:px-6 sm:pt-16 lg:flex-none lg:w-[500px] lg:justify-center lg:px-12 lg:py-4 xl:w-[600px] xl:px-24">
         <header className="fixed inset-x-0 top-0 z-40 border-b border-blue-100/80 bg-white/95 backdrop-blur-md dark:border-blue-900/40 dark:bg-slate-900/95 lg:hidden">
           <div className="mx-auto flex h-16 w-full max-w-md items-center justify-between px-4 sm:max-w-none sm:px-6">
-            <div className="origin-left scale-105">
-              <Logo size="sm" />
+            <div className="flex items-center">
+              {/* Back link moved to form content */}
             </div>
 
             <button
@@ -140,28 +140,19 @@ export function AuthLayout({
           </div>
         </header>
 
-        <div className="absolute left-5 top-20 lg:hidden sm:left-6">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-base font-medium text-slate-500 transition-colors hover:text-[var(--color-primary)] dark:text-slate-300"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span>Back</span>
-          </Link>
-        </div>
 
-        <div className="absolute left-8 top-8 hidden sm:left-12 xl:left-24 lg:block">
-          <Link
-            href="/"
-            className="group flex items-center gap-2 text-sm font-medium text-slate-500 transition-colors hover:text-[var(--color-primary)]"
-          >
-            <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-          </Link>
-        </div>
+
         <div className="mx-auto w-full max-w-md lg:w-full">
-          <header className="mb-8 hidden w-full flex-col items-center lg:flex lg:mb-12">
-            <Logo size="sm" className="scale-125 sm:scale-150 lg:scale-[2]" />
-          </header>
+          {/* Back Arrow - Moved into the form flow to prevent overlapping */}
+          <div className="mb-6">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition-colors hover:text-[var(--color-primary)] dark:text-slate-300"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span>Back to home</span>
+            </Link>
+          </div>
 
           <div
             className={`animate-slide-up ${centerHeader ? "text-center" : "text-left"}`}
@@ -178,7 +169,7 @@ export function AuthLayout({
             </p>
           </div>
 
-          <div className="mt-8 animate-slide-up delay-100 bg-transparent sm:mt-10 sm:rounded-2xl sm:border sm:border-blue-100/70 sm:bg-[var(--color-secondary-bg)] sm:p-8 sm:shadow-lg dark:border-blue-900/40">
+          <div className="mt-6 animate-slide-up delay-100 bg-transparent sm:mt-8 sm:rounded-2xl sm:border sm:border-blue-100/70 sm:bg-[var(--color-secondary-bg)] sm:p-6 sm:shadow-lg dark:border-blue-900/40">
             {children}
           </div>
         </div>
