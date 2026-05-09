@@ -17,6 +17,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useAuth } from "@/components/AuthProvider";
+import { OnboardingWizard } from "@/components/dashboard/OnboardingWizard";
 import {
   formatLectureTimeRange,
   getNextLecture,
@@ -116,6 +117,12 @@ export default function DashboardPage() {
   const dateStripRef = useRef<HTMLDivElement>(null);
 
   const [activeDays, setActiveDays] = useState<WeekDay[]>(WEEKDAY_STUDY_DAYS as WeekDay[]);
+  const [onboardingDismissed, setOnboardingDismissed] = useState(false);
+
+  const showOnboarding =
+    !onboardingDismissed &&
+    user != null &&
+    user.onboardingComplete !== true;
 
   useEffect(() => {
     if (!user || user.role !== "student") {
@@ -126,6 +133,16 @@ export default function DashboardPage() {
       getStudyDaysForMode(user.studyMode || "weekday", user.customStudyDays || []) as WeekDay[]
     );
   }, [user]);
+
+  // Show onboarding wizard if not completed
+  if (showOnboarding) {
+    return (
+      <OnboardingWizard
+        user={user}
+        onComplete={() => setOnboardingDismissed(true)}
+      />
+    );
+  }
 
   const weekDays = useMemo(() => buildWeekDays(weekAnchor), [weekAnchor]);
 

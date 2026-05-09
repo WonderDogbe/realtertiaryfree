@@ -20,7 +20,7 @@ const ROLE_OPTIONS: RoleOption[] = [
     title: "Student",
     description:
       "Get a personalized timetable, attendance tracking, and instant course updates.",
-    href: "/signup/institution?startOver=1",
+    href: "/register?role=student",
     icon: GraduationCap,
     iconClassName: "bg-blue-100 text-blue-700",
   },
@@ -28,7 +28,7 @@ const ROLE_OPTIONS: RoleOption[] = [
     title: "Lecturer",
     description:
       "Manage classes, mark attendance quickly, and communicate updates in real-time.",
-    href: "/signup/institution?startOver=1",
+    href: "/register?role=lecturer",
     icon: Presentation,
     iconClassName: "bg-red-100 text-red-700",
   },

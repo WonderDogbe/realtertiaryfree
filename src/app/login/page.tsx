@@ -220,7 +220,7 @@ export default function LoginPage({
               </button>
 
               <p className="footer-link">
-                New here? <Link href="/signup/institution?startOver=1">Create Account</Link>
+                New here? <Link href="/register">Create Account</Link>
               </p>
             </form>
           </div>

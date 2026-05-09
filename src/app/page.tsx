@@ -258,7 +258,7 @@ export default function LandingPage() {
           </div>
           <div className="flex flex-col gap-3">
             <Link href="/login" className="w-full rounded-2xl bg-black py-4 text-center text-base font-semibold text-white dark:bg-white dark:text-black">Sign In</Link>
-            <Link href="/signup/institution?startOver=1" className="w-full rounded-2xl border border-gray-200 py-4 text-center text-base font-semibold text-gray-900 dark:border-white/20 dark:text-white">Create Account</Link>
+            <Link href="/register" className="w-full rounded-2xl border border-gray-200 py-4 text-center text-base font-semibold text-gray-900 dark:border-white/20 dark:text-white">Create Account</Link>
           </div>
         </div>
       </div>
@@ -296,7 +296,7 @@ export default function LandingPage() {
 
           <div className="mt-10">
             <Link
-              href="/signup/institution?startOver=1"
+              href="/register"
               className="group inline-flex items-center gap-2 rounded-full bg-black/90 border border-black/10 p-2 text-[14px] font-semibold text-white backdrop-blur-sm transition-all hover:bg-black hover:shadow-xl dark:bg-white/95 dark:border-white/40 dark:text-black dark:hover:bg-white dark:hover:shadow-white/10"
             >
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-black transition-transform group-hover:scale-105 dark:bg-black dark:text-white">
@@ -382,13 +382,13 @@ export default function LandingPage() {
                     zIndex,
                     filter: absOffset > 1 ? "saturate(85%)" : "none",
                   }}
-                  className={`group absolute left-1/2 top-0 flex flex-col w-[calc(100vw-64px)] sm:w-[25.5rem] min-h-[420px] sm:min-h-[480px] overflow-hidden rounded-3xl border bg-gray-50 p-6 sm:p-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:bg-zinc-900 ${
-                    card.featured ? "border-gray-900/40 dark:border-white/40" : "border-gray-200 dark:border-white/10"
+                  className={`group absolute left-1/2 top-0 flex flex-col w-[calc(100vw-64px)] sm:w-[25.5rem] min-h-[420px] sm:min-h-[480px] overflow-hidden rounded-3xl border bg-gray-50 p-6 sm:p-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:bg-zinc-950 ${
+                    card.featured ? "border-gray-900/40 dark:border-white/40" : "border-gray-200 dark:border-white/15"
                   } ${
                     isVisible
                       ? "pointer-events-auto cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-4 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black dark:focus-visible:ring-white/20"
                       : "pointer-events-none"
-                  }`}
+                  } ${absOffset !== 0 ? "max-sm:!opacity-0 max-sm:pointer-events-none" : ""}`}
                 >
                   <div className="mb-5 flex justify-center">
                     <div className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105 ${card.iconClassName}`}>
@@ -417,7 +417,7 @@ export default function LandingPage() {
             })}
 
             {/* Dots */}
-            <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 gap-2.5 rounded-full border border-gray-200 bg-white/90 px-4 py-2 shadow-lg backdrop-blur dark:border-white/10 dark:bg-black/80">
+            <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 gap-2.5 rounded-full border border-gray-200 bg-white/90 px-4 py-2 shadow-lg backdrop-blur dark:border-white/15 dark:bg-white/[0.08]">
               {FEATURE_CARDS.map((card, index) => (
                 <button
                   key={`feature-dot-${card.title}`}
@@ -505,7 +505,7 @@ export default function LandingPage() {
               return (
                 <div
                   key={step.title}
-                  className={`group relative rounded-3xl border border-gray-100 bg-gray-50/50 p-6 sm:p-8 flex flex-row items-start gap-5 sm:flex-col sm:items-center sm:text-center transition-all duration-700 hover:border-blue-200 dark:border-white/8 dark:bg-white/[0.03] dark:hover:border-white/20 ${onboarding.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  className={`group relative rounded-3xl border border-gray-100 bg-gray-50/50 p-6 sm:p-8 flex flex-row items-start gap-5 sm:flex-col sm:items-center sm:text-center transition-all duration-700 hover:border-blue-200 dark:border-white/15 dark:bg-zinc-950 dark:hover:border-white/25 ${onboarding.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   style={{ transitionDelay: `${i * 120}ms` }}
                 >
                   {/* Step Number & Desktop Icon */}
@@ -551,7 +551,7 @@ export default function LandingPage() {
             {[...REVIEWS, ...REVIEWS].map((review, i) => (
               <div
                 key={`${review.role}-${i}`}
-                className="w-[400px] flex-shrink-0 rounded-3xl border border-black/5 bg-gray-50/50 p-8 dark:border-white/10 dark:bg-white/[0.02] transition-all hover:border-black/10 dark:hover:border-white/20"
+                className="w-[400px] flex-shrink-0 rounded-3xl border border-black/5 bg-gray-50/50 p-8 dark:border-white/15 dark:bg-zinc-950 transition-all hover:border-black/10 dark:hover:border-white/25"
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="flex gap-0.5">
@@ -601,7 +601,7 @@ export default function LandingPage() {
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
-              href="/signup/institution?startOver=1"
+              href="/register"
               className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-base font-semibold text-white transition-all hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
             >
               Create Account

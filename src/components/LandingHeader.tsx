@@ -52,66 +52,46 @@ export function LandingHeader({
           : "bg-transparent"
       }`}
     >
-      <div className={`relative flex w-full items-center justify-between px-8 transition-all duration-300 ${
-        scrolled ? "py-3 md:py-4" : "py-4 md:py-10"
+      <div className={`mx-auto flex w-full max-w-7xl items-center justify-between px-8 transition-all duration-300 ${
+        scrolled ? "py-3" : "py-5"
       }`}>
-        {/* LEFT — logo (on mobile) / vertical nav links (desktop) */}
-        <div className="flex items-center gap-8">
-          <Link href="/" aria-label="TertiaryFree home" className={`md:hidden transition-opacity duration-300 opacity-100`}>
-            <Image
-              src="/logo.png"
-              alt="TertiaryFree"
-              width={160}
-              height={44}
-              priority
-              className="h-7 w-auto object-contain transition-all"
-            />
-          </Link>
-          
-          <nav className="hidden md:flex flex-col gap-2.5" aria-label="Hero navigation">
-            {navLinks.map((link) => (
-              <div key={link.label} className="group relative">
-                <Link
-                  href={link.href}
-                  className="flex items-center gap-1 text-[13px] font-medium text-gray-900 transition-colors hover:text-black dark:text-white/75 dark:hover:text-white"
-                >
-                  {link.label}
-                  {link.children && <ChevronDown className="h-3 w-3 opacity-60" />}
-                </Link>
-              </div>
-            ))}
-            
-            <button
-              onClick={onToggleDarkMode}
-              className="mt-2.5 flex items-center gap-1 text-[13px] font-medium text-gray-900 transition-colors hover:text-black dark:text-white/75 dark:hover:text-white"
-              aria-label="Toggle theme"
+        {/* LEFT — Logo */}
+        <Link href="/" aria-label="TertiaryFree home" className="flex-shrink-0">
+          <Image
+            src="/logo.png"
+            alt="TertiaryFree"
+            width={180}
+            height={49}
+            priority
+            className={`w-auto object-contain transition-all ${scrolled ? "h-7" : "h-8 sm:h-9"}`}
+          />
+        </Link>
+
+        {/* CENTER — Horizontal nav links (desktop only) */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Main navigation">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="text-[13px] font-medium text-gray-900 transition-colors hover:text-black dark:text-white/75 dark:hover:text-white"
             >
-              <span className="flex items-center gap-1">
-                {isDarkMode ? <Sun className="h-3 w-3 opacity-60" /> : <Moon className="h-3 w-3 opacity-60" />}
-                Appearance
-              </span>
-            </button>
-          </nav>
-        </div>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-        {/* CENTER — logo (desktop only) — aligned with nav links */}
-        <div className={`absolute left-1/2 -translate-x-1/2 hidden h-[20px] md:flex items-center justify-center pointer-events-none transition-all duration-300 ${
-          scrolled ? "top-3 md:top-4" : "top-10"
-        }`}>
-          <Link href="/" aria-label="TertiaryFree home" className="pointer-events-auto">
-            <Image
-              src="/logo.png"
-              alt="TertiaryFree"
-              width={180}
-              height={49}
-              priority
-              className="h-8 w-auto object-contain transition-all sm:h-9"
-            />
-          </Link>
-        </div>
+        {/* RIGHT — CTA (desktop) + burger (mobile) */}
+        <div className="flex items-center gap-3">
+          {/* Theme toggle — desktop */}
+          <button
+            onClick={onToggleDarkMode}
+            className="hidden md:inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition-all hover:bg-gray-100 dark:border-white/20 dark:text-white/60 dark:hover:bg-white/10"
+            aria-label="Toggle theme"
+          >
+            {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
 
-        {/* RIGHT — CTA (desktop) + burger (mobile) — aligned with first nav link */}
-        <div className="flex h-[20px] items-center gap-3">
+          {/* Sign in — desktop */}
           <Link
             href="/login"
             className="hidden md:inline-flex items-center justify-center rounded-full border border-gray-200 bg-white/50 px-5 py-2.5 text-sm font-semibold text-gray-900 backdrop-blur-md transition-all hover:bg-black hover:text-white dark:border-white/30 dark:bg-white/10 dark:text-white dark:hover:bg-white dark:hover:text-black"
@@ -204,7 +184,7 @@ export function LandingHeader({
           Sign in
         </Link>
         <Link
-          href="/signup/institution?startOver=1"
+          href="/register"
           onClick={onCloseMobileMenu}
           className="w-full rounded-full bg-black py-4 text-center text-base font-semibold text-white transition-colors hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
         >

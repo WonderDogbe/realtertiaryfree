@@ -19,6 +19,7 @@ export interface AuthUser {
   studyMode?: StudyModeValue;
   customStudyDays?: WeekDayValue[];
   avatarUrl?: string;
+  onboardingComplete?: boolean;
   [key: string]: any;
 }
 

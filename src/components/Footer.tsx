@@ -12,7 +12,7 @@ export function Footer() {
       { label: "Analytics", href: "/#features" },
     ],
     "For Students": [
-      { label: "Get started", href: "/signup/institution?startOver=1" },
+      { label: "Get started", href: "/register" },
       { label: "Sign in", href: "/login" },
       { label: "Dashboard", href: "/student/dashboard" },
     ],
