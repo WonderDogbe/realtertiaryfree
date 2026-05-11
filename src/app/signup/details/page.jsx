@@ -123,25 +123,29 @@ export default function SignupDetailsPage() {
         /* Cards grid */
         .institution-grid {
           display: flex;
-          flex-direction: row;
+          flex-wrap: wrap;
           gap: 1.25rem;
           width: 100%;
           justify-content: center;
           align-items: stretch;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .institution-grid {
             flex-direction: column;
             align-items: center;
+          }
+          .institution-card-wrapper {
+            width: 100%;
+            max-width: 300px;
           }
         }
 
         /* Card wrapper */
         .institution-card-wrapper {
           position: relative;
-          flex: 1;
-          max-width: 320px;
-          min-width: 240px;
+          flex: none;
+          width: 100%;
+          max-width: 100%;
           border-radius: 22px;
           transition: transform 0.25s ease;
         }
@@ -174,9 +178,17 @@ export default function SignupDetailsPage() {
           background: #fff;
           cursor: pointer;
           box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-          transition: box-shadow 0.25s ease;
+          transition: all 0.25s ease;
           text-align: left;
           padding: 1.5rem;
+        }
+        @media (max-width: 768px) {
+          .institution-card-btn {
+            flex-direction: row;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+          }
         }
         .institution-card-selected .institution-card-btn {
           box-shadow: 0 6px 32px rgba(99,102,241,0.25);
@@ -194,6 +206,12 @@ export default function SignupDetailsPage() {
           color: #6366f1;
           margin-bottom: 1.25rem;
           transition: all 0.3s ease;
+          flex-shrink: 0;
+        }
+        @media (max-width: 768px) {
+          .institution-card-icon-box {
+            margin-bottom: 0;
+          }
         }
         .institution-card-selected .institution-card-icon-box {
           background: #6366f1;
@@ -226,6 +244,13 @@ export default function SignupDetailsPage() {
           top: 1.5rem;
           right: 1.5rem;
           transition: all 0.2s ease;
+          flex-shrink: 0;
+        }
+        @media (max-width: 768px) {
+          .institution-card-dot {
+            position: static;
+            margin-left: auto;
+          }
         }
         .institution-card-dot-active {
           background: #6366f1;

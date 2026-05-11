@@ -207,23 +207,29 @@ export default function SignupInstitutionPage() {
           margin: 0;
         }
 
-        /* Cards grid */
         .institution-grid {
           display: flex;
-          flex-direction: row;
+          flex-wrap: wrap;
           gap: 1.25rem;
           width: 100%;
           justify-content: center;
           align-items: stretch;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 840px) {
+          .institution-grid {
+            gap: 1rem;
+          }
+        }
+        @media (max-width: 768px) {
           .institution-grid {
             flex-direction: column;
             align-items: center;
+            gap: 1rem;
           }
           .institution-card-wrapper {
             width: 100%;
-            max-width: 260px;
+            max-width: 100%;
+            flex: none;
           }
         }
 
@@ -231,9 +237,9 @@ export default function SignupInstitutionPage() {
         .institution-card-wrapper {
           position: relative;
           display: flex;
-          flex: 1;
-          max-width: 260px;
-          min-width: 200px;
+          flex: 1 1 220px;
+          max-width: 280px;
+          min-width: 0;
           border-radius: 22px;
           transition: transform 0.25s ease;
         }
@@ -291,9 +297,17 @@ export default function SignupInstitutionPage() {
           background: #fff;
           cursor: pointer;
           box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-          transition: box-shadow 0.25s ease;
+          transition: all 0.25s ease;
           text-align: left;
           padding: 0;
+        }
+        @media (max-width: 768px) {
+          .institution-card-btn {
+            flex-direction: row;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+          }
         }
         .institution-card-selected .institution-card-btn {
           box-shadow: 0 6px 32px rgba(99,102,241,0.25);
@@ -312,6 +326,15 @@ export default function SignupInstitutionPage() {
           display: flex;
           align-items: center;
           justify-content: center;
+          flex-shrink: 0;
+        }
+        @media (max-width: 768px) {
+          .institution-card-logo-area {
+            height: 60px;
+            width: 60px;
+            border-radius: 12px;
+            background: #f8f9fa;
+          }
         }
         .institution-card-logo-img {
           object-fit: contain;
@@ -344,6 +367,12 @@ export default function SignupInstitutionPage() {
           flex-direction: column;
           gap: 0.2rem;
           flex: 1;
+          min-width: 0; /* Important for text truncation/wrapping */
+        }
+        @media (max-width: 768px) {
+          .institution-card-body {
+            padding: 0;
+          }
         }
         .institution-card-abbr {
           font-size: 1.4rem;
@@ -374,6 +403,13 @@ export default function SignupInstitutionPage() {
           bottom: 1.1rem;
           right: 1.1rem;
           transition: all 0.2s ease;
+          flex-shrink: 0;
+        }
+        @media (max-width: 768px) {
+          .institution-card-dot {
+            position: static;
+            margin-left: auto;
+          }
         }
         .institution-card-dot-active {
           background: #6366f1;
