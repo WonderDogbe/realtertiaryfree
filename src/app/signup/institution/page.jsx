@@ -105,19 +105,19 @@ function persistSelectedInstitution(institutionName) {
 
 export default function SignupInstitutionPage() {
   const router = useRouter();
-  const [selectedInstitution, setSelectedInstitution] = useState(() =>
-    shouldStartOver() ? "" : readStoredInstitutionName(),
-  );
+  const [selectedInstitution, setSelectedInstitution] = useState("");
 
   useEffect(() => {
-    if (!shouldStartOver()) return;
-
-    try {
-      window.localStorage.removeItem(SIGNUP_INSTITUTION_STORAGE_KEY);
-      window.localStorage.removeItem(SIGNUP_STUDENT_DETAILS_STORAGE_KEY);
-      window.dispatchEvent(new Event(SIGNUP_INSTITUTION_UPDATED_EVENT));
-    } catch {
-      // ignore cleanup failures
+    if (shouldStartOver()) {
+      try {
+        window.localStorage.removeItem(SIGNUP_INSTITUTION_STORAGE_KEY);
+        window.localStorage.removeItem(SIGNUP_STUDENT_DETAILS_STORAGE_KEY);
+        window.dispatchEvent(new Event(SIGNUP_INSTITUTION_UPDATED_EVENT));
+      } catch {
+        // ignore cleanup failures
+      }
+    } else {
+      setSelectedInstitution(readStoredInstitutionName());
     }
   }, []);
 
@@ -155,10 +155,11 @@ export default function SignupInstitutionPage() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 5rem 1.25rem 2.5rem;
+          padding: 5rem 1rem 2.5rem;
           position: relative;
-          overflow: hidden;
           background: #f5f5f7;
+          width: 100%;
+          overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         /* Soft background blobs */
@@ -174,6 +175,7 @@ export default function SignupInstitutionPage() {
           flex-direction: column;
           align-items: center;
           gap: 2.5rem;
+          padding: 0;
         }
 
         /* Header */
@@ -225,11 +227,14 @@ export default function SignupInstitutionPage() {
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            width: 100%;
+            padding: 0 0.5rem;
           }
           .institution-card-wrapper {
             width: 100%;
             max-width: 100%;
             flex: none;
+            min-width: 0;
           }
         }
 
@@ -305,7 +310,7 @@ export default function SignupInstitutionPage() {
           .institution-card-btn {
             flex-direction: row;
             align-items: center;
-            padding: 1rem;
+            padding: 0.5rem 1rem;
             gap: 1rem;
           }
         }
@@ -320,7 +325,7 @@ export default function SignupInstitutionPage() {
         /* Logo area */
         .institution-card-logo-area {
           position: relative;
-          height: 140px;
+          height: 70px;
           background: linear-gradient(135deg, #e8e8f4 0%, #f0eef8 100%);
           overflow: hidden;
           display: flex;
@@ -330,9 +335,9 @@ export default function SignupInstitutionPage() {
         }
         @media (max-width: 768px) {
           .institution-card-logo-area {
-            height: 60px;
-            width: 60px;
-            border-radius: 12px;
+            height: 36px;
+            width: 36px;
+            border-radius: 8px;
             background: #f8f9fa;
           }
         }
@@ -342,10 +347,10 @@ export default function SignupInstitutionPage() {
           transition: transform 0.3s ease;
         }
         #institution-card-htu .institution-card-logo-img {
-          transform: scale(1.16);
+          transform: scale(1.1);
         }
         #institution-card-uhas .institution-card-logo-img {
-          transform: scale(1.3);
+          transform: scale(1.1);
         }
         .institution-card-abbr-placeholder {
           font-size: 2.25rem;
@@ -362,10 +367,10 @@ export default function SignupInstitutionPage() {
 
         /* Body */
         .institution-card-body {
-          padding: 1rem 1.25rem 1.25rem;
+          padding: 0.5rem 1.25rem 0.75rem;
           display: flex;
           flex-direction: column;
-          gap: 0.2rem;
+          gap: 0.1rem;
           flex: 1;
           min-width: 0; /* Important for text truncation/wrapping */
         }
@@ -456,6 +461,9 @@ export default function SignupInstitutionPage() {
           font-size: 0.78rem;
           color: #aaa;
           text-align: center;
+          max-width: 280px;
+          margin: 0 auto;
+          line-height: 1.4;
         }
 
         /* Dark theme overrides */

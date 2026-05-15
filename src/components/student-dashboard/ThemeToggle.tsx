@@ -37,9 +37,21 @@ export function ThemeToggle({
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    const initialThemeMode = getInitialThemeMode();
-    setThemeMode(initialThemeMode);
-    applyThemeMode(initialThemeMode);
+    // Priority: localStorage > current document class > system preference
+    const savedTheme = window.localStorage.getItem("theme");
+    const currentClass = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    
+    let initialMode: ThemeMode = currentClass as ThemeMode;
+    
+    if (savedTheme === "light" || savedTheme === "dark") {
+      initialMode = savedTheme;
+    } else if (!document.documentElement.classList.contains("light") && !document.documentElement.classList.contains("dark")) {
+      // Fallback only if no classes are set yet
+      initialMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+
+    setThemeMode(initialMode);
+    applyThemeMode(initialMode);
     setIsReady(true);
   }, []);
 

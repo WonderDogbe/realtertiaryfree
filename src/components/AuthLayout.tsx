@@ -32,73 +32,24 @@ export function AuthLayout({
   const [isMobileSystemTheme, setIsMobileSystemTheme] = useState(false);
 
   useEffect(() => {
-    const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const applyThemePreference = () => {
-      const savedTheme = window.localStorage.getItem("theme");
-      const hasSavedTheme = savedTheme === "dark" || savedTheme === "light";
-      const shouldFollowSystemTheme = !hasSavedTheme;
-      setIsMobileSystemTheme(shouldFollowSystemTheme);
-
-      if (shouldFollowSystemTheme) {
-        setIsDarkMode(systemThemeQuery.matches);
-        setIsThemeReady(true);
-        return;
-      }
-
-      if (savedTheme === "dark") {
-        setIsDarkMode(true);
-        setIsThemeReady(true);
-        return;
-      }
-
-      if (savedTheme === "light") {
-        setIsDarkMode(false);
-        setIsThemeReady(true);
-        return;
-      }
-
-      setIsDarkMode(false);
-      setIsThemeReady(true);
-    };
-
-    const handleSystemThemeChange = (event: MediaQueryListEvent) => {
-      const savedTheme = window.localStorage.getItem("theme");
-      const hasSavedTheme = savedTheme === "dark" || savedTheme === "light";
-
-      if (hasSavedTheme) {
-        return;
-      }
-
-      setIsDarkMode(event.matches);
-    };
-
-    applyThemePreference();
-    systemThemeQuery.addEventListener("change", handleSystemThemeChange);
-
-    return () => {
-      systemThemeQuery.removeEventListener("change", handleSystemThemeChange);
-    };
+    const isDark = document.documentElement.classList.contains("dark");
+    setIsDarkMode(isDark);
+    setIsThemeReady(true);
   }, []);
 
-  useEffect(() => {
-    if (!isThemeReady) {
-      return;
-    }
-
+  const toggleDarkMode = () => {
+    const next = !isDarkMode;
+    setIsDarkMode(next);
     const root = document.documentElement;
     root.classList.remove("light", "dark");
-
-    if (isDarkMode) {
+    if (next) {
       root.classList.add("dark");
+      window.localStorage.setItem("theme", "dark");
     } else {
       root.classList.add("light");
+      window.localStorage.setItem("theme", "light");
     }
-
-    if (!isMobileSystemTheme) {
-      window.localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    }
-  }, [isDarkMode, isThemeReady, isMobileSystemTheme]);
+  };
 
 
 
@@ -124,10 +75,7 @@ export function AuthLayout({
 
             <button
               type="button"
-              onClick={() => {
-                setIsMobileSystemTheme(false);
-                setIsDarkMode((prev) => !prev);
-              }}
+              onClick={toggleDarkMode}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-blue-200 text-[var(--color-text)] transition-colors hover:bg-[var(--color-secondary-bg)] dark:border-blue-900/40"
               aria-label="Toggle dark mode"
             >
@@ -162,14 +110,16 @@ export function AuthLayout({
                 {title}
               </h1>
             )}
-            <p
-              className={`${title ? "mt-3" : "mt-2"} text-sm text-slate-500 dark:text-slate-300`}
-            >
-              {subtitle}
-            </p>
+            {subtitle && (
+              <p
+                className={`${title ? "mt-3" : "mt-2"} text-sm text-slate-500 dark:text-slate-300`}
+              >
+                {subtitle}
+              </p>
+            )}
           </div>
 
-          <div className="mt-6 animate-slide-up delay-100 bg-transparent sm:mt-8 sm:rounded-2xl sm:border sm:border-blue-100/70 sm:bg-[var(--color-secondary-bg)] sm:p-6 sm:shadow-lg dark:border-blue-900/40">
+          <div className="mt-6 animate-slide-up delay-100 bg-transparent sm:mt-8">
             {children}
           </div>
         </div>

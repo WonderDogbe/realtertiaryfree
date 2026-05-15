@@ -173,7 +173,7 @@ export default function LandingPage() {
   const [isFeaturePaused, setIsFeaturePaused] = useState(false);
   const featureSwipeStartX = useRef<number | null>(null);
 
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const reviews = useInView();
   const features = useInView();
@@ -185,12 +185,14 @@ export default function LandingPage() {
   const toggleDarkMode = () => {
     const next = !isDarkMode;
     setIsDarkMode(next);
+    const root = document.documentElement;
+    root.classList.remove("light", "dark");
     if (next) {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
+      root.classList.add("dark");
+      window.localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
+      root.classList.add("light");
+      window.localStorage.setItem("theme", "light");
     }
   };
 
@@ -231,25 +233,20 @@ export default function LandingPage() {
   }, []);
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark") || (!document.documentElement.classList.contains("light"));
+    const isDark = document.documentElement.classList.contains("dark");
     setIsDarkMode(isDark);
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.add("light");
-    }
   }, []);
 
   /* ─── PWA standalone splash ─── */
   if (isStandalone) {
     return (
-      <div className="flex min-h-screen flex-col bg-white text-gray-900 transition-colors duration-500 dark:bg-black dark:text-white">
-        <div className="relative w-full h-[55vh] min-h-[400px]">
+      <div className="flex h-screen flex-col bg-white text-gray-900 transition-colors duration-500 dark:bg-black dark:text-white overflow-hidden">
+        <div className="relative w-full flex-1">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/hero-img.jpeg" alt="Welcome" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-white dark:via-transparent dark:via-transparent dark:to-black" />
         </div>
-        <div className="flex-1 flex flex-col justify-end px-8 pb-12 -mt-10 relative z-10">
+        <div className="flex-shrink-0 flex flex-col justify-end px-8 pb-12 -mt-10 relative z-10">
           <div className="text-center mb-10">
             <h1 className="text-4xl font-extrabold tracking-tight">
               Tertiary<span className="text-gray-900 dark:text-white">Free</span>

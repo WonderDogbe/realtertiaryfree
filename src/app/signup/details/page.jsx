@@ -71,7 +71,7 @@ export default function SignupDetailsPage() {
           justify-content: center;
           padding: 5rem 1.25rem 2.5rem;
           position: relative;
-          overflow: hidden;
+          overflow-x: hidden; /* Prevent horizontal scroll */
           background: #f5f5f7;
         }
 
@@ -180,13 +180,13 @@ export default function SignupDetailsPage() {
           box-shadow: 0 4px 24px rgba(0,0,0,0.07);
           transition: all 0.25s ease;
           text-align: left;
-          padding: 1.5rem;
+          padding: 1rem;
         }
         @media (max-width: 768px) {
           .institution-card-btn {
             flex-direction: row;
             align-items: center;
-            padding: 1rem;
+            padding: 0.75rem 1rem;
             gap: 1rem;
           }
         }
@@ -199,12 +199,12 @@ export default function SignupDetailsPage() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 48px;
-          height: 48px;
-          border-radius: 14px;
+          width: 36px;
+          height: 36px;
+          border-radius: 12px;
           background: rgba(99,102,241,0.08);
           color: #6366f1;
-          margin-bottom: 1.25rem;
+          margin-bottom: 0.75rem;
           transition: all 0.3s ease;
           flex-shrink: 0;
         }
@@ -220,11 +220,11 @@ export default function SignupDetailsPage() {
 
         /* Body */
         .institution-card-title {
-          font-size: 1.25rem;
+          font-size: 1.1rem;
           font-weight: 700;
           letter-spacing: -0.02em;
           color: #111;
-          margin: 0 0 0.5rem;
+          margin: 0 0 0.35rem;
         }
         .institution-card-desc {
           font-size: 0.88rem;
@@ -241,8 +241,8 @@ export default function SignupDetailsPage() {
           border: 2px solid #ccc;
           background: transparent;
           position: absolute;
-          top: 1.5rem;
-          right: 1.5rem;
+          top: 1rem;
+          right: 1rem;
           transition: all 0.2s ease;
           flex-shrink: 0;
         }

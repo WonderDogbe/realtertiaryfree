@@ -109,7 +109,7 @@ export default function StudentStudyModePage() {
           justify-content: center;
           padding: 5rem 1.25rem 2.5rem;
           position: relative;
-          overflow: hidden;
+          overflow-x: hidden; /* Prevent horizontal scroll */
           background: #fdfdfd;
         }
 
@@ -174,11 +174,11 @@ export default function StudentStudyModePage() {
           cursor: pointer;
           box-shadow: 0 10px 40px rgba(0,0,0,0.06);
           text-align: left;
-          padding: 1.75rem;
+          padding: 1.1rem 1.25rem;
         }
 
-        .study-mode-title { font-size: 1.25rem; font-weight: 800; color: #000; margin-bottom: 0.5rem; }
-        .study-mode-desc { font-size: 0.85rem; color: #475569; line-height: 1.5; margin: 0; font-weight: 600; }
+        .study-mode-title { font-size: 1.1rem; font-weight: 800; color: #000; margin-bottom: 0.35rem; }
+        .study-mode-desc { font-size: 0.8rem; color: #475569; line-height: 1.5; margin: 0; font-weight: 600; }
 
         .custom-days-container {
           width: 100%;
